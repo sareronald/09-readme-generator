@@ -58,13 +58,23 @@ function promptUser() {
   ]);
 }
 
+const licenceArray = [
+  "MIT-yellow",
+  "Apache%202.0-blue",
+  "GPLv3-blue",
+  "BSD%203--Clause-blue",
+  "Unlicense-blue",
+];
+
 function generateREADME(answers) {
   return `
   ## ${answers.project}
   ----
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  ![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  
   ## Description
   ${answers.description}
+  
   ## Table of Contents
   - [Installation](#Installation)
   - [Usage](#Usage)
@@ -72,18 +82,28 @@ function generateREADME(answers) {
   - [Contributing](#Contributing)
   - [Tests](#Tests)
   - [Questions](#Questions)
+ 
   ## Installation
-  To install necessary dependencies, run the following command: ${answers.dependencies}
+  To install necessary dependencies, run the following command:
+    
+    ${answers.dependencies} 
+  
   ## Usage
   ${answers.usage}
+ 
   ## License
   The project is licensed under the ${answers.license} license.
+  
   ## Contributing
   ${answers.contributing}
+ 
   ## Tests
-  To run tests, run the following command: ${answers.tests}
+  To run tests, run the following command:
+      
+    ${answers.tests}
+
   ## Questions
-  If you have any questions about the repo, open an issue or contact me directly at ${answers.email}. You can find more of my work at ${answers.gitname}.
+  If you have any questions about the repo, open an issue or contact me directly at ${answers.email}. You can find more of my work at [${answers.gitname}/](https://github.com/${answers.gitname}).
   `;
 }
 
@@ -94,7 +114,7 @@ async function init() {
     const readme = generateREADME(answers);
 
     await writeFileAsync("README.md", readme, "utf8");
-    console.log("README.md file successfully written");
+    console.log("Generating README.md file...");
   } catch (err) {
     console.log(err);
   }
