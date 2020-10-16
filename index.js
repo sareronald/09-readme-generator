@@ -58,21 +58,25 @@ function promptUser() {
   ]);
 }
 
-const licenceArray = [
-  "MIT-yellow",
-  "Apache%202.0-blue",
-  "GPLv3-blue",
-  "BSD%203--Clause-blue",
-  "Unlicense-blue",
-];
+const licenseBadge = {
+  MIT: "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)",
+  "APACHE 2.0":
+    "![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)",
+  "GPL 3.0":
+    "![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)",
+  "BSD 3":
+    "![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)",
+  None:
+    "![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)",
+};
 
 function generateREADME(answers) {
   return `
   ## ${answers.project}
   ----
-  ![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  ${licenseBadge[answers.license]}
   
-  ## Description
+  ## 🧑‍💻 Description
   ${answers.description}
   
   ## Table of Contents
@@ -102,8 +106,12 @@ function generateREADME(answers) {
       
     ${answers.tests}
 
-  ## Questions
-  If you have any questions about the repo, open an issue or contact me directly at ${answers.email}. You can find more of my work at [${answers.gitname}/](https://github.com/${answers.gitname}).
+  ## ❔ Questions
+  If you have any questions about the repo, open an issue or contact me directly at ${
+    answers.email
+  }. You can find more of my work at [${answers.gitname}/](https://github.com/${
+    answers.gitname
+  }).
   `;
 }
 
