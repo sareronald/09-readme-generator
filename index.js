@@ -2,7 +2,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
-const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
 // questions for User
@@ -70,13 +69,14 @@ const licenseBadge = {
     "![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)",
 };
 
+//  generate the answers provided by the user in a readme file
 function generateREADME(answers) {
   return `
   ## ${answers.project}
   ----
   ${licenseBadge[answers.license]}
   
-  ## 🧑‍💻 Description
+  ## Description
   ${answers.description}
   
   ## Table of Contents
@@ -106,7 +106,7 @@ function generateREADME(answers) {
       
     ${answers.tests}
 
-  ## ❔ Questions
+  ## Questions
   If you have any questions about the repo, open an issue or contact me directly at ${
     answers.email
   }. You can find more of my work at [${answers.gitname}/](https://github.com/${
@@ -127,9 +127,5 @@ async function init() {
     console.log(err);
   }
 }
-
-// I will need to read file to find out what license the user has chosen in their Q's and then allocate badge?
-// license from inquirer - replace link with correct licence
-// create a global array of objects that contains a title MIT etc, and another key link to the image
 
 init();
