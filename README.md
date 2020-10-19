@@ -62,15 +62,15 @@ This responsive application has one main Javascript file. A sample README file, 
 
 #### Screenshots of the VS Code and Terminal
 
-![VS-code-screenshot](https://user-images.githubusercontent.com/67722377/96407010-357a4a80-122c-11eb-8984-e184d115abb6.png){: .shadow}
+![VS-code-screenshot](https://user-images.githubusercontent.com/67722377/96407010-357a4a80-122c-11eb-8984-e184d115abb6.png)
 
 #### Screenshots of the resulting README file
 
-![README-screenshot](https://user-images.githubusercontent.com/67722377/96407135-6fe3e780-122c-11eb-8585-8b46c06a71fa.png){: .shadow}
+![README-screenshot](https://user-images.githubusercontent.com/67722377/96407135-6fe3e780-122c-11eb-8585-8b46c06a71fa.png)
 
 #### Walkthrough Video
 
-![README-walkthrough-video](https://user-images.githubusercontent.com/67722377/96407161-7c684000-122c-11eb-9743-2a6e5105570e.gif){: .shadow}
+![README-walkthrough-video](https://user-images.githubusercontent.com/67722377/96407161-7c684000-122c-11eb-9743-2a6e5105570e.gif)
 
 ## Licence
 
